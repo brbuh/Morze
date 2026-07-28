@@ -1,8 +1,11 @@
 ##### **Morse Beeper**
 
 **Author:** [GitHub profile](https://github.com/brbuh)
+
 [**License**](LICENSE)
+
 [Morse code table](Morze_code_table.md)
+
 [(Russian version)](README_RU.md)
 
 ###### **OVERVIEW**
