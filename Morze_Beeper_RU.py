@@ -1,9 +1,10 @@
 import keyboard
 import winsound
+import subprocess
 
-print("=== Morse Beeper v1.0 by brbuh ===")
+print("=== Morse Beeper v2.0 by brbuh ===")
 
-print('Нажмите "-" или "j" чтобы издать "—", нажмите "k" или "." чтобы издать "·".')
+print('Нажмите "-" или "j" чтобы издать "—", нажмите "k" или "." чтобы издать "·",  нажмите пробел для паузы.')
 
 
 wpm_modes_long = {
@@ -27,18 +28,38 @@ if choice not in (1, 2, 3):
     print('Похоже, вы ошиблись в вводе. Мы выбрали за вас стандартный режим.')
 
 
-print("Чтобы выйти, нажмите esc")
+print("Чтобы выйти, нажмите Еsc, чтобы очистить экран нажмите 'c'")
 
 
 long = wpm_modes_long.get(choice, 300)
 short = wpm_modes_short.get(choice, 100)
 
 
+output = []
+
+def output_print(symbol):
+    clear(False)
+    output.append(symbol)
+    print(*output)
+     
+
+def clear(erase_output = True):
+    subprocess.run('cls', shell=True)
+    if erase_output:
+        global output
+        output = []
+
 def long_beep():
     winsound.Beep(650, long)
+    output_print('—')
 
 def short_beep():
-    winsound.Beep(650, short)
+    winsound.Beep(650, short)   
+    output_print('·')
+
+def space():
+    output_print(' ')
+
 
 
 keyboard.add_hotkey('j', long_beep)
@@ -46,6 +67,10 @@ keyboard.add_hotkey('-', long_beep)
 
 keyboard.add_hotkey('k', short_beep)
 keyboard.add_hotkey('.', short_beep)
+
+keyboard.add_hotkey(' ', space)
+
+keyboard.add_hotkey('c', clear)
 
 
 keyboard.wait('esc')

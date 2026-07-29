@@ -10,18 +10,20 @@
 
 ###### **OVERVIEW**
 
-Morse Beeper is a simple Python script designed for practicing or listening to Morse code timing and audio signals. It captures keyboard inputs in real time and emits beeps corresponding to Morse dashes ("—") and dots ("·") using Windows sound synthesis.
+Morse Beeper v2.0 is a simple Python script designed for practicing or listening to Morse code timing and audio signals. It captures keyboard inputs in real time, emits beeps corresponding to Morse dashes ("—") and dots ("·") using Windows sound synthesis, and displays the output on the screen.
 
 
 
 ###### **FEATURES**
 
 * Real-time keypress listening using global hotkeys.
+* Live console display of entered Morse symbols.
+* Space insertion for separating characters/words.
+* Screen clearing feature during runtime.
 * Multiple speed modes based on Words Per Minute (WPM):
-
-  * Mode 1: Very Slow (\~5 WPM)
-  * Mode 2: Standard (\~12 WPM)
-  * Mode 3: Fast (\~20 WPM)
+  * Mode 1: Very Slow (~5 WPM)
+  * Mode 2: Standard (~12 WPM)
+  * Mode 3: Fast (~20 WPM)
 * Support for dual key layouts (e.g., standard layout and Cyrillic/alternative layout mapping for 'j' / 'k' and '-' / '.').
 * Simple escape key exit mechanism.
 
@@ -39,11 +41,11 @@ Morse Beeper is a simple Python script designed for practicing or listening to M
 ###### **USAGE**
 
 1. Run the script:
-[Morze\_Beeper.py](Morze_Beeper.py)
+[Morze_Beeper.py](Morze_Beeper.py)
 2. Select a speed mode by entering 1, 2, or 3 when prompted. If an invalid choice is entered, it defaults to Standard Mode (12 WPM).
 3. Controls:
-
    * Press 'j' or '-' to play a DASH ("—") tone.
    * Press 'k' or '.' to play a DOT ("·") tone.
+   * Press 'Space' to insert a space into the output.
+   * Press 'c' to clear the screen and reset output.
    * Press 'ESC' to exit the application.
-
